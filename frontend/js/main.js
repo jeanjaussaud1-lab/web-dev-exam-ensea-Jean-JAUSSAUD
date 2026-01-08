@@ -76,7 +76,14 @@ const displayRecipes = (recipes) => {
 // CONFIGURATION DES EVENT LISTENERS
 // ============================================
 
+const setupEventListeners = () => {
+	// Event listener pour le formulaire d'ajout de recette
+	const addRecipeForm = document.getElementById("addRecipeForm")
 
+	if (addRecipeForm) {
+		addRecipeForm.addEventListener("submit", handleAddRecipe)
+	}
+}
 
 // ============================================
 // AJOUTER UNE NOUVELLE RECETTE

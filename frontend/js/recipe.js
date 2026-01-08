@@ -1,13 +1,10 @@
 // ============================================
 // IMPORTS - Modules nécessaires
 // ============================================
-import { getOneRecipe, createRecipe } from "./api.js"
-import {  clearRecipesList } from "./ui.js"
-
+import { getOneRecipe } from "./api.js"
+import { renderRecipeCard } from "./ui.js"
 
 const loadRecipe = async (recipeId) => {
-
-
 	try {
 		// 1. Appeler l'API pour récupérer la recette par son ID
 		// const recipe = await getOneRecipe(recipeId)
@@ -51,8 +48,27 @@ const loadRecipe = async (recipeId) => {
 // Cette fonction est appelée automatiquement au chargement de la page
 // Elle charge et affiche toutes les recettes
 
-// document.addEventListener("DOMContentLoaded", () => {
-// 	//console.log("Application chargée")
-// 	//loadRecipe("1")
-// 	//setupEventListeners()
-// })
+const setupEventListeners = () => {
+	const loader = document.getElementById("loading-spinner")
+	const recipeDetail = document.getElementById("recipe-detail")
+	const deleteButton = document.getElementById("delete-recipe-btn")
+
+	if (loader) {
+		loader.classList.add("d-none")
+	}
+	if (recipeDetail) {
+		recipeDetail.classList.remove("d-none")
+	}
+
+	if (deleteButton) {
+		deleteButton.addEventListener("click", () => {
+			alert("Fonction de suppression non implémentée.")
+		})
+	}
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+	console.log("Application chargée")
+	loadRecipe("1")
+	setupEventListeners()
+})
