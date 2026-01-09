@@ -103,6 +103,8 @@ export const handleAddRecipe = async (event) => {
 		const ingredients = "" // TODO: récupérer la valeur du champ recipeIngredients
 		const instructions = "" // TODO: récupérer la valeur du champ recipeInstructions
 		const prepTime = "" // TODO: récupérer la valeur du champ recipePrepTime (convertir en nombre avec parseInt)
+		const imageUrl = "" // TODO: récupérer la valeur du champ recipeImageUrl
+
 
 		// TODO 3: Créer un objet recette avec les données récupérées
 		const newRecipe = {
