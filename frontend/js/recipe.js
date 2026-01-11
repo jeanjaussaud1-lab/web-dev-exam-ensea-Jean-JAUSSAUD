@@ -32,12 +32,13 @@ const loadRecipe = async (recipeId) => {
 				"https://images.pexels.com/photos/5190684/pexels-photo-5190684.jpeg",
 		}
 
-		// 1. Appeler l'API pour récupérer la recette par son ID
+		// Appeler l'API pour récupérer la recette par son ID
 		//const recipe = await renderSingleRecipe(recipe)
-		//TODO: appeler renderSingleRecipe(recipe)
+		// TODO: appeler renderSingleRecipe(recipe)
 		const recipeDetail = document.getElementById("recipe-detail")
 
-		// 2. Afficher la recette dans la grid
+		// Afficher la recette dans la grid
+		recipeDetail.innerHTML = renderSingleRecipe(recipe)
 	} catch (error) {
 		console.error("Erreur lors du chargement de la recette:", error.message)
 		alert(

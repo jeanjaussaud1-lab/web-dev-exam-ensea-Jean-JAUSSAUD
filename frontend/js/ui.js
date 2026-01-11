@@ -133,10 +133,6 @@ export const displayMessage = (container, message, type = "info") => {
 }
 
 export const renderSingleRecipe = (recipe) => {
-	// TODO: Ajouter l'image de couverture de la recette
-	// TODO: Actuellement une image statique est utilisée
-	// TODO: Remplacer "NOM DE LA RECETTE", "MIN DYNAMIQUE", "LISTE DYNAMIQUE ICI !"
-
 	return `
 	<div class="row mb-3">
 		<div class="col-12">
@@ -165,10 +161,7 @@ export const renderSingleRecipe = (recipe) => {
 			<div class="card h-100 shadow-sm transition">
 				<div class="card-header bg-primary text-white">
 					<div class="d-flex justify-content-between align-items-center">
-						<h2 class="mb-0" id="recipe-name">
-							<!-- Le nom sera inséré ici -->
-							Nom de la recette
-						</h2>
+						<h2 class="mb-0" id="recipe-name">${recipe.name}</h2>
 						<span
 							class="badge bg-light text-dark fs-6"
 							id="recipe-preptime"
@@ -188,7 +181,7 @@ export const renderSingleRecipe = (recipe) => {
 									d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
 								/>
 							</svg>
-							<!-- Le temps sera inséré ici -->
+							${recipe.prepTime} min
 						</span>
 					</div>
 				</div>
